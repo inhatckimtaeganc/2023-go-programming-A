@@ -19,19 +19,22 @@ func main() {
 
 	reader := bufio.NewReader(os.Stdin)
 
-	fmt.Print("Input guess number : ")
-	inputNumberString, err := reader.ReadString('\n')
-	if err != nil {
-		log.Fatal(err)
-	}
-	inputNumberString = strings.TrimSpace(inputNumberString)
-	inputNumber, err := strconv.Atoi(inputNumberString)
-	if err != nil {
-		log.Fatal(err)
-	}
-	if inputNumber < answer {
-		fmt.Println("Guess number is lower then answer") // Answer is higher~
-	} else if inputNumber > answer {
-		fmt.Println("Guess number is higher then answer") // Answer is lower
+	for i := 0; i < 10; i++ {
+		fmt.Println("You have", 10-i, "chances~")
+		fmt.Print("Input guess number : ")
+		inputNumberString, err := reader.ReadString('\n')
+		if err != nil {
+			log.Fatal(err)
+		}
+		inputNumberString = strings.TrimSpace(inputNumberString)
+		inputNumber, err := strconv.Atoi(inputNumberString)
+		if err != nil {
+			log.Fatal(err)
+		}
+		if inputNumber < answer {
+			fmt.Println("Guess number is lower then answer") // Answer is higher~
+		} else if inputNumber > answer {
+			fmt.Println("Guess number is higher then answer") // Answer is lower
+		}
 	}
 }
