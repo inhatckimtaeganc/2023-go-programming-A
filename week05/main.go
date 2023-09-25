@@ -10,9 +10,13 @@ import (
 func main() {
 	fmt.Print("Input score : ")
 	reader := bufio.NewReader(os.Stdin)
-	inputScore, err := reader.ReadString('\n') // option 2
+	inputScore, err := reader.ReadString('\n')
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(inputScore)
+	if inputScore >= 90 {
+		grade := "A grade!"
+	} else {
+		grade := "BCDE grade~"
+	}
 }
