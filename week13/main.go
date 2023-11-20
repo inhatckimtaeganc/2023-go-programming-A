@@ -4,7 +4,10 @@ import "fmt"
 
 func main() {
 	var a []string
-	//a = make([]string, 4, 5)
-	fmt.Printf("%#v\n", a)
+	var b []bool
+	a = make([]string, 4, 5)
+
+	fmt.Printf("%#v %#v\n", a, b)
 	fmt.Println(a, len(a), cap(a))
+	fmt.Println(b, len(b), cap(b))
 }
