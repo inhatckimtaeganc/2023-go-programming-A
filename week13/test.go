@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(os.Args) // Args == Arguments
+	fmt.Println(os.Args[1:]) // Args == Arguments
 	fmt.Println(os.Args[2])
 }
